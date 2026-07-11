@@ -33,7 +33,7 @@ try:
     print("--------------------")
 
     # グラフ描画
-    plt.bar(df.index, df["hours"], color="blue", label="睡眠時間(時間)")
+    plt.bar(df.index, df["hours"], color="skyblue", edgecolor="navy", label="睡眠時間(時間)", zorder=2)
     plt.xticks(df.index, df["date"].dt.strftime('%Y-%m-%d'), rotation=45)
 
     # フラフの調整
@@ -47,7 +47,7 @@ try:
     plt.yticks(np.arange(0, y_max + 3, 1))
     
     # グラフの説明
-    plt.grid(True, linestyle=":", alpha=0.6)
+    plt.grid(True, linestyle=":", alpha=0.6, axis="y")
     plt.legend(loc="upper left", fontsize=10) # 左上に説明を出す
     plt.tight_layout() # 文字のレイアウト調整
     
